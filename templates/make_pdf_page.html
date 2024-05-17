@@ -1,0 +1,149 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/resume.css' %}"/>
+</head>
+
+<body>
+<div class="container" id="full">
+    <div class="row full  justify-content-center resume-container">
+        <div class=" resume-container-block">
+            <div class="image">
+                <img
+                        src="{% static 'img/logo.png' %}"
+                        alt="gfg-logo"
+                        style="width: 100px; height: 100px"
+                />
+            </div>
+            <div class="Contact">
+                <h2>Байланыш:</h2>
+                <p><b>Дарек:</b>Исанов көчөсү 75/2</p>
+                <p><b>Тел:</b>+996 559-98-68-70</p>
+            </div>
+        </div>
+        <div class=" resume-container-block">
+            <div class="name">
+                <h1>Ыйман Гимназиясы</h1>
+            </div>
+            <div class="titlepage">
+                <p><b>Каттоо Баракчасы</b></p>
+                <hr/>
+            </div>
+            <div class="imagechildren">
+                <img src="{{ url.image_path.url  }}"
+                     alt="gfg-logo"
+                     style="width: 100px; height: 100px"
+                />
+            </div>
+
+            <div class="full_name">
+                <h3>- Аты Жөнү</h3>
+                <hr/>
+                <p> {{ context.full_name}}</p>
+            </div>
+            <div class="gender">
+                <h3>- Жынысы:</h3>
+                <hr/>
+                <p> {{ context.gender }}</p>
+            </div>
+            <div class="birth_day">
+                <h3>- Туулган күнү, айы, жылы:</h3>
+                <hr/>
+                <p> {{ context.birth_day}}</p>
+            </div>
+            <div class="region">
+                <h3>- Жашаган облусу, району, айылы:</h3>
+                <hr/>
+                <p> {{ context.region}}</p>
+            </div>
+            <div class="phone_number_student">
+                <h3>- Окуучунун телефон номери:</h3>
+                <hr/>
+                <p> {{ context.phone_number_student}}</p>
+            </div>
+            <div class="name_of_dud_mum">
+                <h3>- Окуучунун ата-энесинин толук аты-жөнү:</h3>
+                <hr/>
+                <p>{{ context.name_of_dud_mum}}</p>
+            </div>
+            <div class="phone_of_dud_mum">
+                <h3>- Окуучунун ата-энесинин байланыш номерлери:</h3>
+                <hr/>
+                <p>{{ context.phone_of_dud_mum}}</p>
+            </div>
+            <div class="name_guardian">
+                <h3>- Окуучуга жооптуу кишинин толук аты-жөнү:</h3>
+                <hr/>
+                <p>{{ context.name_guardian}}</p>
+            </div>
+            <div class="phone_guardian">
+                <h3>- Окуучуга жооптуу кишинин тел.номери:</h3>
+                <hr/>
+                <p>{{ context.phone_guardian}}</p>
+            </div>
+            <div class="whatsapp">
+                <h3>- Ар дайым байланышта болгон ватсап номери:</h3>
+                <hr/>
+                <p>{{ context.whatsapp }}</p>
+            </div>
+            <div class="interested">
+                <h3>- Кызыккан сабактары?</h3>
+                <hr/>
+                <p>{{ context.interesting_lesson}}</p>
+            </div>
+            <div class="success">
+                <h3>- Ийгиликтери (олимпиада, сабактар, спорт, маданий ж.б.)</h3>
+                <hr/>
+                <p>{{ context.success }}</p>
+            </div>
+            <div class="hobbies">
+                <h3>- Өнөрлөрү (жөндөмдүүлүктөрү):</h3>
+                <hr/>
+                <p>{{ context.hobbies}}</p>
+            </div>
+            <div class="lang">
+                <h3>- Сынакты кайсыл тилде тапшырасыз?</h3>
+                <hr/>
+                <p>{{ context.lang}}</p>
+            </div>
+            <button type="button" class="btn btn-primary d-btn" onclick="Print(event)">
+                Сактоо
+            </button>
+
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    function Print(event) { event.target.style.opacity = 0
+      console.log(event.target.style.opacity)
+      setTimeout(()=>{
+        event.target.style.opacity = 1
+      console.log(event.target.style.opacity)
+      console.log(event.target)
+
+
+      },1000)
+      var printContents = document.getElementById("full").innerHTML;
+      var originalContents = document.body.innerHTML;
+
+      document.body.innerHTML = printContents;
+
+      window.print();
+
+      document.body.innerHTML = originalContents;
+      console.log(event.target.style.opacity)
+
+     
+    }
+
+
+
+</script>
+</html>

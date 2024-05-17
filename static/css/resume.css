@@ -1,0 +1,77 @@
+/* Write CSS Here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.full {
+
+    max-width: 1000px;
+    min-height: 100px;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    margin: 27mm 16mm 27mm 16mm;
+    margin: 20px;
+
+
+}
+.d-btn {
+margin-bottom: 20px;
+}
+.left {
+    position: initial;
+    padding: 20px;
+    font-size: 12px;
+
+}
+.right {
+    position: initial;
+    padding: 20px;
+}
+.image, .Contact, .full_name, .gender, .birth_day, .region, .phone_number_student, .name_of_dud_mum, .phone_of_dud_mum,
+.name_guardian, .phone_guardian, .whatsapp, .interested, .success, .hobbies, .project {
+    margin-bottom: 20px;
+}
+.h1 {
+    background-color: rgb(4, 96, 150);
+}
+h3{
+    font-size: 1rem;
+}
+p{
+    font-size: 0.6rem;
+}
+@media (max-width: 768px) {
+hr  {
+    margin-top:2px;
+    margin-bottom:2px;
+}
+p {
+font-size:14px;
+margin-bottom:2px;
+}
+.resume-container{
+    width: fit-content;
+    margin-right:auto;
+    display: flex;
+    justify-content: space-between;
+}
+.resume-container-block{
+    width: 50%;
+
+}
+h1 {
+  font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 14px;
+    margin-bottom:2px;
+  }
+
+}
